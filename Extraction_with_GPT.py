@@ -177,7 +177,7 @@ def compute_performance(test_dataset_all_data_path, responses, label_code):
     print(precision_recall_f1(None, responses, labels, label_code))
     
     
-def write_responses_to_file(responses, test_dataset_all_data_path, label_code, output_file):
+def write_responses_to_file(responses, label_code, output_file):
     def tp_fp_fn(X):
         label= X['freq_str_labeled']
         pred = X['Predictions']
@@ -211,10 +211,10 @@ def write_responses_to_file(responses, test_dataset_all_data_path, label_code, o
     test_dataset_all_data.to_excel(output_file, index=False)
     
     
-def response_job(client, dataset_json, deployment_name, test_dataset_all_data_path, label_code, output_excel_file):
+def response_job(client, dataset_json, deployment_name, label_code, output_excel_file):
     responses = obtain_api_response(client, dataset_json, deployment_name)
-    compute_performance(test_dataset_all_data_path, responses, label_code)
-    write_responses_to_file(responses, test_dataset_all_data_path, label_code, output_excel_file)
+    #compute_performance(test_dataset_all_data_path, responses, label_code)
+    write_responses_to_file(responses, label_code, output_excel_file)
     
 
 def main():
