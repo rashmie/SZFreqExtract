@@ -10,6 +10,18 @@ This tool is designed to perform two key tasks:
 
 To achieve this, based on our investigation of fine-tuning BERT-based models `bert-large-cased`, `biobert-large-cased`, and `Bio_ClinicalBERT` as well as generative large language models `GPT-4`, `GPT-3.5 Turbo`, and `Llama-2-70b-hf`, `GPT-4` demonstrated the best performance across both tasks. The final structured output integrates results from both tasks, showcasing the potential of fine-tuned generative models in extracting structured data from limited text strings.
 
+
+## Requirements
+
+Note that you need a Microsoft Azure OpenAI subscription to run this code.
+
+Ensure that all required Python packages are installed by using the provided `requirements.txt` file:
+
+```bash
+pip install -r requirements.txt
+```
+
+
 ## How to Finetune
 
 To finetune a model (either seizure frequency phrase extraction or attribute extraction), run `Extraction_with_GPT.py` with the following arguments:
